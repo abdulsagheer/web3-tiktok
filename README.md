@@ -1,3 +1,3 @@
 ## Tiktok Web3
-Developed an mockup of tiktok web3 app.
 
+Developed a mockup of tiktok web3 app.
