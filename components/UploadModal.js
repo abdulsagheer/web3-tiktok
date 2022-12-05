@@ -6,11 +6,17 @@ import toast from 'react-hot-toast'
 const UploadModal = () => {
   const [caption, setCaption] = useState('')
   const [videoUrl, setVideoUrl] = useState('')
-  const {} = useAppContext()
+  const { createVideo } = useAppContext()
 
   const handleSubmit = async event => {
     event.preventDefault()
     if (!caption || !videoUrl) return
+
+    toast.promise(createVideo(caption, videoUrl), {
+      loading: 'Uploading Video This can take a moment... ⏳',
+      success: 'Video Uploaded! 🎉',
+      error: 'Something went wrong! 😢',
+    })
   }
 
   return (
@@ -34,13 +40,13 @@ const UploadModal = () => {
             className={style.input}
             type='text'
             value={videoUrl}
-            // onChange={event => setVideoUrl(event.target.value)}
+            onChange={event => setVideoUrl(event.target.value)}
           />
         </div>
       </div>
       <div className={style.modalButtons}>
         <button
-          // onClick={() => setNewVideoShow(false)}
+          onClick={() => setNewVideoShow(false)}
           className={`${style.button} ${style.cancelButton}`}
         >
           Cancel

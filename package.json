@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@rainbow-me/rainbowkit": "^0.5.1",
+    "@truffle/hdwallet-provider": "^2.1.2",
     "axios": "^0.26.1",
     "ethers": "^5.7.0",
     "javascript-time-ago": "^2.3.13",

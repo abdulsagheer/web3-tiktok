@@ -5,7 +5,7 @@ import style from '../styles/Video.module.css'
 import { useAppContext } from '../context/context'
 
 const Video = ({ address, caption, videoUrl, likes, id }) => {
-  const {} = useAppContext()
+  const { getUsersThatLiked } = useAppContext()
 
   const [playing, setPlaying] = useState(false)
   const [likersAddresses, setLikersAddresses] = useState([])
